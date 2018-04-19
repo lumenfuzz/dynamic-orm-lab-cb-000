@@ -54,7 +54,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attributes)
-    query = ""
+    sql = "SELECT * FROM #{self.table_name} WHERE "
     i = 0
     attributes.each do |key, value|
       i == 0 ? query += "#{key} = '#{value}'" : query += "AND #{key} = '#{value}'"
