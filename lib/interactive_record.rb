@@ -60,7 +60,6 @@ class InteractiveRecord
       i == 0 ? query += "#{key} = '#{value}'" : query += "AND #{key} = '#{value}'"
       i += 1
     end
-    sql = "SELECT * FROM #{self.table_name} WHERE #{query}"
     return DB[:conn].execute(sql)
   end
 
